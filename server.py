@@ -40,7 +40,7 @@ def start_server(ip, port):
             # expecting an 8-byte byte string for file size followed by file name
             file_name, file_size = get_file_info(data)
             print(f'Received: {file_name} with size = {file_size}')
-            conn_socket.send(b'go ahead!')
+            conn_socket.send(b'go ahead')
             upload_file(conn_socket, file_name, file_size)
             conn_socket.close()
     except KeyboardInterrupt as ki:
